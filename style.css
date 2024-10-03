@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.dynamic-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.title {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-top: 25%;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid rgba(255,255,255,0.75);
+    width: 20ch;
+    animation: typing 3s steps(20) infinite alternate, blink 0.7s infinite step-end;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 20ch; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.floating-shapes::before,
+.floating-shapes::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.floating-shapes::before {
+    top: 10%;
+    left: 20%;
+    width: 150px;
+    height: 150px;
+    animation-duration: 6s;
+}
+
+.floating-shapes::after {
+    bottom: 15%;
+    right: 25%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 10s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    position: relative;
+    animation: slideIn 1.5s ease-out;
+    z-index: 2;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #f9d342;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    animation: fadeUp 2s ease-in-out;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.skill {
+    background-color: #f9d342;
+    color: #333;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.icon-image {
+    width: 50px;  /* Set a smaller width */
+    height: 50px;  /* Set a smaller height */
+    object-fit: cover;  /* Ensures the image scales nicely */
+    border-radius: 50%;  /* If you want it to be circular like many icons */
+    border: 2px solid ; /* Optional: Adds a border for better visibility */
+    transition: transform 0.3s ease;  /* Smooth transition on hover, optional */
+}
+
+.profile-image img {
+    opacity: 80%;
+    margin-top: 6%;
+    margin-bottom: 2%;
+    margin-right: 100px;
+    position:absolute;
+    width: 250px;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    border: 4px;
+    animation: fadeIn 2s ease-out;
+}
